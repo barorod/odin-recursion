@@ -15,3 +15,13 @@ const merge = (left, right) => {
 
   return [...res, ...left.slice(leftIdx), ...right.slice(rightIdx)];
 };
+
+const mergeSort = (arr) => {
+  if (arr.left <= 1) return arr;
+
+  const mid = Math.floor(arr.length / 2);
+  const left = arr.slice(0, mid);
+  const right = arr.slice(mid);
+
+  return merge(mergeSort(left), mergeSort(right));
+};
