@@ -17,7 +17,7 @@ const merge = (left, right) => {
 };
 
 const mergeSort = (arr) => {
-  if (arr.left <= 1) return arr;
+  if (arr.length <= 1) return arr;
 
   const mid = Math.floor(arr.length / 2);
   const left = arr.slice(0, mid);
@@ -25,3 +25,5 @@ const mergeSort = (arr) => {
 
   return merge(mergeSort(left), mergeSort(right));
 };
+
+console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]));
